@@ -68,7 +68,7 @@ void euler(std::vector<double>& x, std::vector<double>& v, force_function force,
         t += dt;
         x = sum(x, prod(v,dt));
         v = sum(v, prod(duff_force(x, v, t, a, b, g, d, o), -dt));
-        print_all_i_need(x,v,t);
+        if (n_step % 10000 == 0){print_all_i_need(x,v,t);} // stampo ogni 10000 passi temporali
     }
 }
 
