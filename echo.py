@@ -12,6 +12,7 @@ target_size = 3 # N_y
 reservoir_size = 100 # N_x
 spectral_radius = 0.9 # rho , as a guiding principle, ρ(W) should be set greater for tasks where a more extensive history of the input is required to perform it, and smaller for tasks where the current output y(n) depends more on the recent history of u(n). [Lukoševičius, 2012]
 leaking_rate = 0.5 # also called alpha in some references, it could also be adapted online
+beta = 0.1 # it's parameter for the ridge regression, it balances the trade-off between minimizing the prediction error and controlling the norm of the output weights
 
 #initialize input and target vectors, this is just for now, we will have to put some sensible values
 u = np.random.rand(input_size) # it is important to have a good input scaling, as it will affect the learning process
